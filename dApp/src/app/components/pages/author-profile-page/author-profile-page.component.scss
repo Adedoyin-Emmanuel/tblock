@@ -1,0 +1,279 @@
+@import "../../common/live-auction-nfts/live-auction-nfts.component.scss";
+
+.author-profile-sidebar {
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: var(--whiteColor);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.06);
+    margin: {
+        top: -140px;
+        right: 15px;
+    };
+    .author-user {
+        margin-bottom: 20px;
+        position: relative;
+        max-width: 125px;
+
+        img {
+            border: 3px solid var(--pinkColor);
+            border-radius: 5px;
+            max-width: 120px;
+        }
+        i {
+            bottom: 7px;
+            right: -5px;
+            width: 22px;
+            height: 22px;
+            font-size: 14px;
+            line-height: 22px;
+            position: absolute;
+            text-align: center;
+            border-radius: 50px;
+            color: var(--whiteColor);
+            background-color: var(--lightblueColor);
+        }
+    }
+    h3 {
+        margin-bottom: 7px;
+    }
+    span {
+        color: var(--pinkColor);
+        margin-bottom: 15px;
+        display: block;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    .sp-title {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding-right: 23px;
+        position: relative;
+
+        i {
+            color: var(--lightblueColor);
+            position: absolute;
+            cursor: pointer;
+            top: -2px;
+            right: 0;
+        }
+    }
+    .author-content {
+        display: flex;
+        padding: 10px 15px;
+        border-radius: 5px;
+        align-items: center;
+        background-color: #f6f6f6;
+        justify-content: space-between;
+
+        .content-left {
+            position: relative;
+            top: 3px;
+
+            span {
+                display: block;
+                font-size: 14px;
+                margin-bottom: 5px;
+                color: var(--bodyColor);
+            }
+            h3 {
+                margin-bottom: 0;
+            }
+        }
+        button {
+            border: 0;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 12px 25px 10px;
+            color: var(--whiteColor);
+            transition: var(--transition);
+            background-color: var(--pinkColor);
+            font: {
+                size: var(--fontSize);
+                weight: 600;
+            };
+            &:hover {
+                background-color: var(--lightblueColor);
+            }
+        }
+    }
+    .social-link {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            bottom: 0;
+            top: 20px;
+        };
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            
+            a {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+                line-height: 35px;
+                text-align: center;
+                border-radius: 50px;
+                display: inline-block;
+                color: var(--pinkColor);
+                transition: var(--transition);
+                background-color:  #f14d5d15;
+
+                &.facebook {
+                    background-color: #4267B2;
+                    color: var(--whiteColor);
+                }
+                &.twitter {
+                    background-color: #1DA1F2;
+                    color: var(--whiteColor);
+                }
+                &.instagram {
+                    background-color: #C13584;
+                    color: var(--whiteColor);
+                }
+                &.linkedin {
+                    background-color: #2867B2;
+                    color: var(--whiteColor);
+                }
+                &:hover {
+                    background-color: var(--pinkColor);
+                    color: var(--whiteColor);
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+ 
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .author-profile-sidebar {
+        padding: 20px;
+        margin: {
+            top: 0;
+            right: 0;
+        };
+        .sp-title {
+            i {
+                top: -1px;
+            }
+        }
+        .social-link {
+            li {
+                margin-right: 8px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .author-profile-sidebar {
+        margin: {
+            top: 0;
+            right: 0;
+        };
+        .sp-title {
+            i {
+                top: -1px;
+            }
+        }
+        .social-link {
+            li {
+                margin-right: 8px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .author-profile-sidebar {
+        padding: 20px;
+        margin: {
+            top: 0;
+            right: 0;
+        };
+        .sp-title {
+            i {
+                top: -1px;
+            }
+        }
+        .author-content {
+            display: block;
+            align-items: unset;
+            justify-content: unset;
+
+            .content-left {
+                top: 0;
+            }
+            .content-right {
+                margin-top: 10px;
+            }
+        }
+        .social-link {
+            li {
+                margin-right: 8px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .author-profile-sidebar {
+        margin: {
+            right: 0;
+        };
+    }
+    .auction-item {
+        .content {
+            .auction-item-list {
+                padding: {
+                    left: 0;
+                    top: 0;
+                };
+                .author {
+                    transform: translateY(0);
+                    margin-bottom: 20px;
+                    position: relative;
+                    max-width: 50px;
+                    top: auto;
+                }
+            }
+            .auction-item-content {
+                .auction-left {
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+                .auction-right {
+                    a {
+                        font: {
+                            size: 18px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

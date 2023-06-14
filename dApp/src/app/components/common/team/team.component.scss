@@ -1,0 +1,62 @@
+.team-area {
+    background-color: #f8f8f8;
+    position: relative;
+    z-index: 1;
+}
+.team-card {
+    background-color: var(--whiteColor);
+    transition: var(--transition);
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 25px;
+    
+    img {
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+    h3 {
+        margin-bottom: 10px;
+    }
+    span {
+        color: var(--pinkColor);
+        margin-bottom: 12px;
+        display: block;
+    }
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+.team-shape {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .team-card {
+        padding: 20px;
+        
+        img {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

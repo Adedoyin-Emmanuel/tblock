@@ -1,0 +1,133 @@
+.about-content {
+    padding-right: 15px;
+
+    h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 17px;
+
+        strong {
+            color: var(--titleColor);
+        }
+        a {
+            color: var(--pinkColor);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .features-list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            bottom: 0;
+            top: 20px;
+        };
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 16px;
+            font-weight: 600;
+
+            &::before {
+                left: 0;
+                top: 50%;
+                width: 8px;
+                height: 8px;
+                content: '';
+                margin-top: -1px;
+                border-radius: 50%;
+                position: absolute;
+                transform: translateY(-50%);
+                background-color: var(--pinkColor);
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.about-image {
+    text-align: center;
+    padding-left: 15px;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .about-content {
+        padding-right: 0;
+    
+        h2 {
+            font-size: 24px;
+            margin-bottom: 13px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .features-list {
+            margin: {
+                top: 15px;
+            };
+        }
+    }
+    .about-image {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .about-content {
+        padding-right: 0;
+    
+        h2 {
+            font-size: 30px;
+            margin-bottom: 13px;
+        }
+        p {
+            font-size: 15px;
+        }
+        .features-list {
+            margin: {
+                top: 15px;
+            };
+        }
+    }
+    .about-image {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .about-content {
+        padding-right: 0;
+    
+        h2 {
+            font-size: 30px;
+        }
+    }
+    .about-image {
+        padding-left: 0;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

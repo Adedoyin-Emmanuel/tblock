@@ -1,0 +1,38 @@
+@import "../../common/live-auction-nfts/live-auction-nfts.component.scss";
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .auction-item {
+        .content {
+            .auction-item-list {
+                padding: {
+                    left: 0;
+                    top: 0;
+                };
+                .author {
+                    transform: translateY(0);
+                    margin-bottom: 20px;
+                    position: relative;
+                    max-width: 50px;
+                    top: auto;
+                }
+            }
+            .auction-item-content {
+                .auction-left {
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+                .auction-right {
+                    a {
+                        font: {
+                            size: 18px;
+                        };
+                    }
+                }
+            }
+        }
+    }
+
+}

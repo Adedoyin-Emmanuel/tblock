@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col">
+        <div class="card mx-3 my-4">
+            <div class="card-header">
+                Faucet <br/>
+
+                <small>Get test coins</small>
+            </div>
+            
+            <div class="card-body ">
+
+                <form class="form p-3 row" *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                    
+        
+                    <div class="mb-3 col-7">
+                        <div class="d-flex ">
+                            <div class=" px-2">
+                                <strong>Amount: </strong>
+                            </div>
+                            <div class="flex-grow-1 px-2"><input type="number" placeholder="1"  formControlName="amount" class="form-control" id="amount" aria-describedby="amount">  </div>
+                        </div>
+                        
+                                      
+                        <div id="amount" class="form-text" > </div> 
+                        
+          
+                        <!-- <div class="error-message" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                          <div *ngFor="let error of  objectKeys(form.get('name')?.errors)">                                        
+                              {{validationMessages.name[error]}}
+                          </div>
+                        </div> -->
+                    </div>
+
+                    <div class="mb-3 col-2">
+                        <!-- <label for="currency" class="form-label">Currency</label> -->
+                        
+                        <select class="form-select" formControlName="currency" aria-label="Currency">
+                            
+                            <option *ngFor="let curr of ticketCurrencies" [value]="curr.address" >{{curr.currency}}</option>
+                           
+                        </select>
+
+                        <div id="currency-text" class="form-text" > </div> 
+                        
+          
+                        <!-- <div class="error-message" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                          <div *ngFor="let error of  objectKeys(form.get('name')?.errors)">                                        
+                              {{validationMessages.name[error]}}
+                          </div>
+                        </div> -->
+                    </div>
+
+                    <div class="mb-3   col-12 col-sm-3">
+                        <button type="submit" class="btn btn-primary" [disabled]=" form.invalid ">Claim</button>
+                    </div>
+
+                    <div *ngIf=" message.length>0" class="alert alert-info m-3 p-3 col-12">
+                        {{message}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

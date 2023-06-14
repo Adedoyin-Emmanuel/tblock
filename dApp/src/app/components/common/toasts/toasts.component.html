@@ -1,0 +1,7 @@
+<ngb-toast
+  *ngFor="let toast of toastService.toasts"
+  [class]="toast.cssClasses|| 'bg-success text-light'"
+  [header]="toast.header" [autohide]="true" [delay]="toast.delay || 5000"
+  (hiddden)="toastService.hide(toast)"
+>{{toast.body}}</ngb-toast>
+

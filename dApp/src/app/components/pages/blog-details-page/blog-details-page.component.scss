@@ -1,0 +1,181 @@
+.blog-details-content {
+    .content {
+        margin-bottom: 25px;
+        
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+            margin: {
+                bottom: 0;
+                top: 18px;
+            };
+            li {
+                display: inline-block;
+                color: var(--bodyColor);
+                margin: {
+                    bottom: 0;
+                    right: 20px;
+                };
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .blog-image {
+        margin-bottom: 25px;
+        position: relative;
+
+        img {
+            border-radius: 10px;
+        }
+        .tag-btn {
+            top: -20px;
+            right: 30px;
+            font-size: 14px;
+            position: absolute;
+            border-radius: 50px;
+            display: inline-block;
+            padding: 10px 20px 7px;
+            color: var(--whiteColor);
+            background-color: var(--pinkColor);
+        }
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 10px;
+
+        &:not(:first-child) {
+            margin-top: 25px;
+        }
+    }
+    ul, ol {
+        margin: {
+            top: 15px;
+            bottom: 15px;
+        };
+        li {
+            color: var(--bodyColor);
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.comments-form {
+    padding: 40px;
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color: var(--whiteColor);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.06);
+    
+    h3 {
+        margin-bottom: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .form-control {
+            width: 100%;
+            height: 50px;
+            border: none;
+            box-shadow: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: var(--bodyColor);
+            background-color: #F8F8F8;
+        }
+        textarea.form-control {
+            height: auto;
+        }
+    }
+}
+.blockquote, blockquote {
+    background-color: #f9f9f9;
+    padding: 40px;
+
+    p {
+        font-weight: 600;
+        color: var(--titleColor);
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .blog-details-content {
+        .content {
+            ul {
+                margin: {
+                    top: 15px;
+                };
+            }
+        }
+        .blog-image {
+            .tag-btn {
+                top: -15px;
+                right: 15px;
+                font-size: 13px;
+                padding: 6px 15px 4px;
+            }
+        }
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+    }
+    .blockquote, blockquote {
+        padding: 20px;
+
+        p {
+            font-size: 16px;
+        }
+    }
+    .comments-form {
+        padding: 25px 20px;
+        
+        h3 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+    
+            label {
+                margin-bottom: 12px;
+            }
+            .form-control {
+                padding-left: 15px;
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+    .comments-form {
+        padding: 30px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

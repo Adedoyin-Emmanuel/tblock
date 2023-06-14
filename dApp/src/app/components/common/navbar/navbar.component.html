@@ -1,0 +1,439 @@
+<div
+    class="navbar-area p-0 m-0"
+    ngStickyNav
+    stickyClass="sticky-box-shadow"
+    ngStickyNav
+>
+    <div class="container-fluid">
+        <nav
+            class="navbar navbar-expand-xl navbar-light bg-light justify-content-between my-md-0 my-2"
+            [class.active]="classApplied"
+        >
+            <a class="navbar-brand" routerLink="/">
+                <img
+                    class="img-logo-sm img-fluid my-md-0 my-2"
+                    src="assets/images/logo/tmp_logo.png"
+                    alt="logo"
+                />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                (click)="toggleClass()"
+            >
+                <svg
+                    stroke="currentColor"
+                    fill="#000"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    class="text-light"
+                    height="35"
+                    width="35"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M4 11h12v2H4zm0-5h16v2H4zm0 12h7.235v-2H4z"></path>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-3">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="javascript:void(0)"
+                            class="nav-link dropdown-toggle"
+                        >
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/live-auctions"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Live Ticket Auctions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/collection"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Trending Events
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            routerLink="/activity"
+                            class="nav-link text-decoration-none"
+                        >
+                            Activity
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="javascript:void(0)"
+                            class="nav-link dropdown-toggle"
+                        >
+                            User
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/authors"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Authors
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/author-profile"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Author Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/create"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Create
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/connect-wallet"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Wallet Connect
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/terms-conditions"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/privacy-policy"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a
+                            href="javascript:void(0)"
+                            class="nav-link dropdown-toggle"
+                        >
+                            Community
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Blog Grid
+                                    <span
+                                        class="px-3 text-capitalize text-muted"
+                                        >coming soon</span
+                                    >
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Blog Details
+                                    <span
+                                        class="px-3 text-capitalize text-muted"
+                                        >coming soon</span
+                                    >
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/faq"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Tutorials / How To
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/about"
+                                    class="nav-link"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    About Us
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a routerLink="/faucet" class="nav-link">
+                            Faucet
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a routerLink="/contact" class="nav-link">
+                            Contact Us
+                        </a>
+                    </li> -->
+                </ul>
+                <ul class="navbar-nav for-responsive">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link dropdown-toggle"> Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="javascript:void(0)"
+                            class="nav-link dropdown-toggle"
+                        >
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/live-auctions"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Live Auctions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/explore-1"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Normal Tickets
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/explore-2"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Nft Tickets
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/collection"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Events
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            routerLink="/activity"
+                            class="nav-link"
+                            (click)="toggleClass()"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            Activity
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="javascript:void(0)"
+                            class="nav-link dropdown-toggle"
+                        >
+                            User
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/authors"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Authors
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/author-profile"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Author Profile
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/create"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Create
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/connect-wallet"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Wallet Connect
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/terms-conditions"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/privacy-policy"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a
+                            href="javascript:void(0)"
+                            class="nav-link dropdown-toggle"
+                        >
+                            Community
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/faq"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    Help Center
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    routerLink="/about"
+                                    class="nav-link"
+                                    (click)="toggleClass()"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }"
+                                >
+                                    About Us
+                                </a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a
+                            routerLink="/faucet"
+                            class="nav-link"
+                            (click)="toggleClass()"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            Faucet
+                        </a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a
+                            routerLink="/contact"
+                            class="nav-link"
+                            (click)="toggleClass()"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                        >
+                            Contact Us
+                        </a>
+                    </li> -->
+                </ul>
+
+                
+            </div>
+            <div class="others-option d-flex justify-content-between  align-items-center my-3">
+                <div class="option-item ">
+                    <a
+                        routerLink="/create"
+                        class="btn btn-dark text-decoration-none"
+                        >Create Event</a
+                    >
+                </div>
+                <div class="option-item ms-2">
+                    <!-- <a routerLink="/connect-wallet" class="default-btn">Connect Wallet</a> -->
+                    <app-w3m-core-button-wrapper></app-w3m-core-button-wrapper>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

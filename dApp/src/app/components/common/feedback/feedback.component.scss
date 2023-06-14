@@ -1,0 +1,221 @@
+.feedback-slider {
+    max-width: 850px;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    &.style-two {
+        max-width: 100%;
+    }
+}
+.feedback-item {
+    text-align: center;
+
+    img {
+        width: unset !important;
+        margin: {
+            bottom: 20px;
+            right: auto;
+            left: auto;
+        };
+    }
+    p {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: var(--titleColor);
+    }
+    ul {
+        list-style-type: none;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li {
+            color: var(--bodyColor);
+            display: inline-block;
+            margin-right: 27px;
+            position: relative;
+
+            &::before {
+                top: .5px;
+                width: 1px;
+                content: '';
+                right: -15px;
+                height: 20px;
+                position: absolute;
+                background-color: var(--bodyColor);
+            }
+            &:last-child {
+                margin-right: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.feedback-box {
+    img {
+        width: unset !important;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: var(--titleColor);
+    }
+    ul {
+        list-style-type: none;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        li {
+            color: var(--bodyColor);
+            display: inline-block;
+            margin-right: 27px;
+            position: relative;
+
+            &::before {
+                top: .5px;
+                width: 1px;
+                content: '';
+                right: -15px;
+                height: 20px;
+                position: absolute;
+                background-color: var(--bodyColor);
+            }
+            &:last-child {
+                margin-right: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .text-center {
+        img {
+            margin-bottom: 0;
+        }
+    }
+}
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .feedback-slider {
+        max-width: 100%;
+    }
+    .feedback-item {
+        img {
+            margin: {
+                bottom: 15px;
+            };
+        }
+        p {
+            font-size: 17px;
+        }
+        ul {
+            li {
+                font-size: 15px;
+                margin-right: 27px;
+    
+                &::before {
+                    top: 0;
+                    right: -15px;
+                }
+            }
+        }
+    }
+    .feedback-box {
+        text-align: center;
+        margin-bottom: 25px;
+
+        img {
+            margin: {
+                bottom: 15px;
+            };
+        }
+        p {
+            font-size: 17px;
+        }
+        ul {
+            li {
+                font-size: 15px;
+                margin-right: 27px;
+    
+                &::before {
+                    top: 0;
+                    right: -15px;
+                }
+            }
+        }
+        .text-center {
+            margin-top: 25px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .feedback-slider {
+        max-width: 100%;
+    }
+    .feedback-item {
+        p {
+            font-size: 19px;
+        }
+        ul {
+            li {
+                &::before {
+                    top: -.5px;
+                }
+            }
+        }
+    }
+    .feedback-box {
+        margin-bottom: 25px;
+
+        p {
+            font-size: 17px;
+        }
+        ul {
+            li {
+                &::before {
+                    top: -.5px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .feedback-box {
+        margin-bottom: 10px;
+        
+        p {
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

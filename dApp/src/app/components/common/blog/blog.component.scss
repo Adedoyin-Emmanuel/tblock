@@ -1,0 +1,104 @@
+.blog-area {
+    background-color: #f4f7f6;
+}
+.blog-card {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: var(--whiteColor);
+
+    .blog-img {
+        position: relative;
+
+        a {
+            img {
+                border: {
+                    top: {
+                        left-radius: 15px;
+                        right-radius: 15px;
+                    }
+                };
+            }
+        }
+        .blog-tag-btn {
+            left: 25px;
+            bottom: -15px;
+            font-size: 14px;
+            position: absolute;
+            border-radius: 50px;
+            padding: 7px 20px 4px;
+            display: inline-block;
+            color: var(--whiteColor);
+            transition: var(--transition);
+            background-color: var(--pinkColor);
+
+            &:hover {
+                background-color: var(--lightblueColor);
+            }
+        }
+    }
+    .content {
+        padding: 35px 25px 25px;
+
+        h3 {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .blog-card {
+        .blog-img {
+            .blog-tag-btn {
+                left: 15px;
+                bottom: -15px;
+                font-size: 14px;
+                padding: 7px 15px 4px;
+            }
+        }
+        .content {
+            padding: 33px 15px 15px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .blog-card {
+        .blog-img {
+            .blog-tag-btn {
+                left: 20px;
+                padding: 7px 15px 4px;
+            }
+        }
+        .content {
+            padding: 35px 20px 18px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .blog-card {
+        .content {
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

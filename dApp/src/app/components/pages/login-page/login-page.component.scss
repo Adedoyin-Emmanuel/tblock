@@ -1,0 +1,180 @@
+.user-all-form {
+    padding: 40px;
+    max-width: 750px;
+    border-radius: 15px;
+    background-color: var(--whiteColor);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.06);
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .form-control {
+            width: 100%;
+            height: 50px;
+            border: none;
+            box-shadow: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: var(--bodyColor);
+            background-color: #F8F8F8;
+        }
+        textarea.form-control {
+            height: auto;
+        }
+    }
+    .sub-title {
+        text-align: center;
+        position: relative;
+        color: #888888;
+        font-weight: 500;
+        display: block;
+        z-index: 1;
+        margin: {
+            top: 30px;
+            bottom: 30px;
+        };
+        span {
+            background-color: var(--whiteColor);
+            padding: {
+                left: 15px;
+                right: 15px;
+            };
+        }
+        &::before {
+            right: 0;
+            top: 10px;
+            height: 1px;
+            width: 100%;
+            z-index: -1;
+            content: '';
+            position: absolute;
+            background: #f0f0f0;
+        }
+    }
+    .login-with-account {
+        ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+            padding-left: 0;
+
+            li {
+                display: block;
+                margin-bottom: 15px;
+                
+                a {
+                    transform: var(--transition);
+                    border: 1px solid #C4C4C4;
+                    color: var(--bodyFonts);
+                    position: relative;
+                    text-align: center;
+                    border-radius: 5px;
+                    padding: 10px 30px;
+                    font-size: 17px;
+                    display: block;
+                    width: 100%;
+
+                    i {
+                        transform: translateY(-50%);
+                        margin-left: -30px;
+                        position: absolute;
+                        top: 50%;
+
+                        &.ri-facebook-line {
+                            color: #2042e3;
+                        }
+                        &.ri-google-line {
+                            color: #ff5b4a;
+                        }
+                    }
+                    &:hover {
+                        border-color: var(--pinkColor);
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .user-all-form {
+        padding: 25px 20px;
+        max-width: 100%;
+        
+        .form-group {
+            margin-bottom: 20px;
+    
+            label {
+                margin-bottom: 12px;
+            }
+            .form-control {
+                padding-left: 15px;
+            }
+        }
+        .sub-title {
+            margin: {
+                top: 25px;
+                bottom: 25px;
+            };
+        }
+        .login-with-account {
+            ul {
+                li {
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .user-all-form {
+        padding: 35px;
+        max-width: 600px;
+        
+        .login-with-account {
+            ul {
+                li {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .user-all-form {
+        max-width: 690px;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

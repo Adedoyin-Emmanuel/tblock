@@ -1,0 +1,216 @@
+<!-- Page Banner -->
+<div class="inner-banner inner-bg2">
+    <div class="container">
+        <div class="inner-title">
+            <h1>Activity</h1>
+            <ul>
+                <li>
+                    <a routerLink="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    Activity
+                </li>
+            </ul>
+            <div class="inner-shape">
+                <img src="assets/images/inner-banner/inner-shape1.png" alt="shape">
+                <img src="assets/images/inner-banner/inner-shape2.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Activity -->
+<div class="activity-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 activity-tabs">
+                <ngx-tabset>
+                    <ngx-tab tabTitle="All">
+
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <h3 *ngIf="ownEvents.length>0">Events</h3>
+                                <div class="activity-card" *ngIf="ownEvents.length<1">
+                                    <div class="activity-content">
+                                        <span><i class="ri-calendar-2-line"></i> You have not created any event yet</span>
+                                        <a routerLink="/create">
+                                            Create your first Event
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="activity-card m-2 p-2" *ngFor="let event of ownEvents">
+                                    <div class="activity-img">                                
+                                        <a [routerLink]="['/event/manage', event.id]">
+                                            <img class="img-fluid" src={{event.logo}} alt="nft-image">
+                                        </a>
+                                    </div>
+                                    <div class="activity-content">
+                                        <span><i class="ri-calendar-2-line"></i> {{event.date | date:'MMM dd, y'}}</span>
+                                        <span><i class="ri-time-line"></i> {{event.date | date:'hh:mm'}}</span>
+                                    </div>
+                                    <div class="activity-into">
+                                        <h3>
+                                            <a [routerLink]="['/event/manage', event.id]">
+                                                {{event.name}}
+                                            </a>
+                                        </h3>
+                                        <div > <span>Tickets Sold: {{event.ticketsSold}}</span></div>
+                                        <span>Created by <b>@{{event.orgName}}</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h3 *ngIf="tickets.length>0">Tickets Purchased</h3>
+                                <div class="activity-card m-2 p-2" *ngFor="let ticket of tickets">
+                                    <div class="activity-img">
+                                        <!-- <img [src]="assets/images/nft/nft-img4.jpg" alt="nft-image"> -->
+                                        <img [src]="ticket.image" alt="nft-image">
+                                    </div>
+                                    <div class="activity-content">
+                                        <span><i class="ri-calendar-2-line"></i> {{ticket.date | date:'MMM dd, y'}}</span>
+                                        <span><i class="ri-time-line"></i> {{ticket.date | date:'hh:mm'}}</span>
+                                    </div>
+                                    <div class="activity-into">
+                                        <h3>
+                                            <a routerLink="/tickets/">
+                                                {{ticket.name}}
+                                            </a>
+                                        </h3>
+                                        <span>Organized By <b>{{ticket.organizer}}</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        
+                        
+
+                        
+
+                    </ngx-tab>
+                    <!-- <ngx-tab tabTitle="Recent">
+                        
+                        <div class="activity-card">
+                            <div class="activity-img">
+                                <img src="assets/images/nft/nft-img2.jpg" alt="nft-image">
+                            </div>
+                            <div class="activity-content">
+                                <span><i class="ri-calendar-2-line"></i> 4 June, 2021</span>
+                                <span><i class="ri-time-line"></i> 11:08 AM</span>
+                            </div>
+                            <div class="activity-into">
+                                <h3>
+                                    <a routerLink="/item-details">
+                                        Walking On Air
+                                    </a>
+                                </h3>
+                                <span>Listed By <b>@James</b> For <b>75 TFuel</b> Each</span>
+                            </div>
+                        </div>
+                        <div class="activity-card">
+                            <div class="activity-img">
+                                <img src="assets/images/nft/nft-img3.jpg" alt="nft-image">
+                            </div>
+                            <div class="activity-content">
+                                <span><i class="ri-calendar-2-line"></i> Date</span>
+                                <span><i class="ri-time-line"></i> 08:41 PM</span>
+                            </div>
+                            <div class="activity-into">
+                                <h3>
+                                    <a routerLink="/item-details">
+                                        Exe Dream Hight
+                                    </a>
+                                </h3>
+                                <span>Organized By <b>organizer</b> </span>
+                            </div>
+                        </div>
+                    </ngx-tab> -->
+                    <ngx-tab tabTitle="Your Tickets">
+                        <div class="activity-card" *ngIf="tickets.length<1">
+                            <div class="activity-content">
+                                <span><i class="ri-calendar-2-line"></i> You don't have any ticket yet</span>
+                                <a routerLink="/">
+                                    Purchase your first ticket
+                                </a>
+                            </div>
+                            
+                        </div>
+
+                        <div class="activity-card" *ngFor="let ticket of tickets">
+                            <div class="activity-img">
+                                <!-- <img [src]="assets/images/nft/nft-img4.jpg" alt="nft-image"> -->
+                                <img [src]="ticket.image" alt="nft-image">
+                            </div>
+                            <div class="activity-content">
+                                <span><i class="ri-calendar-2-line"></i> {{ticket.date | date:'MMM dd, y'}}</span>
+                                <span><i class="ri-time-line"></i> {{ticket.date | date:'hh:mm'}}</span>
+                            </div>
+                            <div class="activity-into">
+                                <h3>
+                                    <a [routerLink]="['/event/ticket', ticket.eventId, ticket.tokenId]">
+                                        {{ticket.name}}
+                                    </a>
+                                </h3>
+                                <span>Organized By <b>{{ticket.organizer}}</b></span>
+                            </div>
+                        </div>
+                        
+                    </ngx-tab>
+                </ngx-tabset>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="activity-sidebar">
+                    <form class="search-form">
+                        <input type="search" class="form-control" placeholder="Search keyword">
+                        <button type="submit">
+                            <i class="ri-search-line"></i>
+                        </button>
+                    </form>
+                    <div class="filters">
+                        <h3 class="title">Filters</h3>
+                        <ul>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Concert
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Virtual Worlds
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Birtday
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Nft Ticket
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Games
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Seminar
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" routerLink="/explore-1">
+                                    Comedy
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

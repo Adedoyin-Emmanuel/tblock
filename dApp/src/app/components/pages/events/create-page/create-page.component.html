@@ -1,0 +1,178 @@
+<!-- Page Banner -->
+<div class="inner-banner inner-bg2">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h1>Create Event</h1>
+            <ul>
+                <li>
+                    <a routerLink="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    Create
+                </li>
+            </ul>
+            <div class="inner-shape">
+                <img src="assets/images/inner-banner/inner-shape1.png" alt="shape">
+                <img src="assets/images/inner-banner/inner-shape2.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create -->
+<div class="ptb-100 create-area me-5">
+    <div class="container" *ngIf="mainFormGroup">
+        <form [formGroup]="mainFormGroup" (ngSubmit)="creatEvent()">
+            <div class="row">
+                <div class="col-xl-9 col-lg-8 col-md-12">
+                    <div class="section-title">
+                        <h2>Event Information</h2>
+                        <small class="text-muted">Add your general event information.</small>
+                    </div>
+                    <div class="col-lg-12 col-md-6 my-2 ">
+                        <div class="form-group">
+                            <label for="">Event Name</label>
+                            <input type="text" class="form-control sec-style" formControlName="eventName">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-6 my-2">
+                        <div class="form-group">
+                            <label for="">Event Owner</label>
+                            <input type="text" class="form-control sec-style" formControlName="eventOrg">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-6 my-2">
+                        <div class="form-group">
+                            <label for="">Event Description</label>
+                            <textarea class="form-control sec-style" name="" id="" cols="20" rows="6" formControlName="eventDescription"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="section-title mt-4 mb-2">
+                        <h3>Event Ticket NFT</h3>
+                        <small class="text-muted">Your Tickets will be issued as NFT Collectibles with this information.</small>
+                    </div>
+
+                    <div class="col-12 ">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Event NFT name</label>
+                                    <input type="text" class="form-control " formControlName="nftName">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Event NFT Symbol</label>
+                                    <input type="text" class="form-control sec-style" formControlName="nftSymbol">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="section-title mt-4 mb-2">
+                        <h3>Other Details</h3>
+                        <small class="text-muted"></small>
+                    </div>
+
+                    <div class="col-lg-12 col-md-6">
+                        <div class="row">
+                            <div class="col my-2">
+                                <div class="form-group">
+                                    <label>Event Type</label>
+                                    <select class="form-select"  formControlName="eventType">
+                                        <option class="mt-5" value="0">In Person</option>
+                                        <pre></pre>
+                                        <option class="mt-5" value="1">Virtual</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col my-2">
+                                <div class="form-group">
+                                    <label for="">Start Date</label>
+                                    <input class="form-control sec-style" type="datetime" formControlName="startDate">
+                                </div>
+                            </div>
+                            <!-- Event Address -->
+                            <div class="col-lg-12 col-md-6 my-2">
+                                <div class="form-group">
+                                    <label for="">Event Address</label>
+                                    <input type="text" class="form-control sec-style" formControlName="eventAddress">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6 my-2">
+                                <div class="form-group">
+                                    <label for="">Event Banner (Url)</label>
+                                    <input type="url" class="form-control sec-style" formControlName="eventBanner">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-6 my-2">
+                                <div class="form-group">
+                                    <label for="">Maximum Capacity</label>
+                                    <input type="number" class="form-control sec-style" formControlName="maxCapacity">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-6 my-2 ">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="website">Website</label>
+                                            <input id="website" type="url" class="form-control sec-style" formControlName="eventWeb">
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="email" class="form-control sec-style" formControlName="email">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Create Button -->
+                            <div class="col-lg-12 col-md-12 my-2 px-5 d-flex justify-content-end">
+                                <button class="btn btn-primary px-4 mx-3" [disabled]="mainFormGroup.invalid"  type="submit">Create Event</button>
+
+                                <button class="btn btn-danger px-4 mx-3"   type="reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Box -->
+                <div class="col-xl-3 col-lg-4 col-md-12">
+                    <div class="card width">
+                        <img [src]="f.eventBanner.value"  alt="" class="card-img-top">
+                        <div class="card-body">
+                            <img class=" auth-profile-img" src="https://place-hold.it/120?text=TB" width="90" alt="">
+                            <div class=" text-center ev-create-badge"><span><b>0</b><b> / </b><b>0</b></span></div>
+                            <div class="mt-4">
+                                <p><strong>{{f.eventName.value??'Event Name'}}</strong></p>
+                                <p>{{f.startDate.value |  date :'MMM dd, y'}}</p>
+                                <p>{{f.eventDescription.value}}</p>
+                            </div>
+                            <div class="mt-5">
+                                <small class="text-muted">Hosted by</small>
+                                <div class="row">
+                                    <div class="col">
+                                        <p>{{f.eventOrg.value}}</p>
+                                    </div>
+                                </div>
+                                <p><a class="nav-link text-primary" [href]="f.eventWeb.value"><b>{{f.eventWeb.value}}</b></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of Container -->
+            </div>
+        </form>
+    </div>
+</div>

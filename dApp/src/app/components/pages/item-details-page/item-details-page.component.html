@@ -1,0 +1,126 @@
+Page Banner
+<div class="inner-banner inner-bg4">
+    <div class="container">
+        <div class="inner-title">
+            <h1>Item Details</h1>
+            <ul>
+                <li>
+                    <a routerLink="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    Item
+                </li>
+                <li>
+                    Item Details
+                </li>
+            </ul>
+            <div class="inner-shape">
+                <img src="assets/images/inner-banner/inner-shape1.png" alt="shape">
+                <img src="assets/images/inner-banner/inner-shape2.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Item Details -->
+<div class="item-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-6 col-md-12">
+                <div class="item-details-left-side pr-20">
+                    <div class="item-details-img">
+                        <img src={{singleItemDetail.logo}} alt="nft-image">
+                        <span><i class="ri-heart-line"></i>{{singleItemDetail.id}}</span>
+                    </div>
+                    <div class="item-details-content">
+                        <h3>History</h3>
+                        <div class="item-details-into" >
+                            <div class="item-details-card" *ngFor="let his of history">
+                                <div class="item-details-card-img">
+                                    <img src={{his.logo}} alt="author">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div class="item-details-card-content">
+                                    <h3>Name <strong>{{his.name}}</strong></h3>
+                                    <span>by @{{his.orgName}}</span>
+                                </div>
+                                <div class="work-hours">
+                                    {{his.timeposted}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-12">
+                <div class="item-details-desc">
+                    <div class="section-title">
+                        <h3>{{singleItemDetail.name}}</h3>
+                        <p>{{singleItemDetail.desc}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <div class="item-details-user">
+                                <h4>Creator</h4>
+                                <div class="content">
+                                    <div class="images">
+                                        <img src={{singleItemDetail.logo}} alt="author-image">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span>@{{singleItemDetail.orgName}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="item-details-user">
+                                <h4>Collection</h4>
+                                <div class="content">
+                                    <div class="images">
+                                        <img src={{singleItemDetail.logo}} alt="author-image">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span>{{singleItemDetail.collection}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-details-price">
+                        <div class="item-details-title">
+                            <h3>Date:</h3>
+                            <p>{{singleItemDetail.date}}</p>
+                            <span></span>
+                        </div>
+                        <ul>
+                            
+                            <li>
+                                Category
+                                <strong>Concert</strong>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-details-user-item">
+                        <div class="images">
+                            <img src={{singleItemDetail.logo}} alt="author-image">
+                            <i class="ri-check-line"></i>
+                        </div>
+                        <div class="content">
+                           <h4>{{singleItemDetail.owner}}</h4>
+                            <span>Creator</span>
+                        </div>
+                    </div>
+                    <div class="item-details-btn">
+                        <a routerLink="/connect-wallet" class="default-btn border-radius-50">
+                            Buy Ticket
+                        </a>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-live-auction-nfts></app-live-auction-nfts>

@@ -1,0 +1,92 @@
+.error-area {
+    border-top: 1px solid #eeeeee;
+}
+.error-content {
+    margin-top: -25px;
+    text-align: center;
+    position: relative;
+
+    h1 {
+        line-height: 1;
+        font-size: 300px;
+        margin-bottom: 0;
+
+        span {
+            color: red;
+        }
+    }
+    h3 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        max-width: 520px;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    .default-btn {
+        margin-top: 15px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .error-content {
+        margin-top: -8px;
+
+        h1 {
+            font-size: 110px;
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 15px;
+            max-width: 100%;
+        }
+        .default-btn {
+            margin-top: 2px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .error-content {
+        margin-top: -20px;
+
+        h1 {
+            font-size: 240px;
+        }
+        h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 17px;
+        }
+        .default-btn {
+            margin-top: 10px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

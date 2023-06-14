@@ -1,0 +1,46 @@
+<div class="feedback-area ptb-100">
+    <div class="container">
+        <div
+            class="feedback-slider"
+            [ngClass]="{'d-none': router.url === '/index-3'}"
+        >
+            <owl-carousel-o [options]="feedbackSlides">
+                <ng-template carouselSlide>
+                    <div class="feedback-item">
+                        <img src="assets/images/feedback/feedback-line.png" alt="image">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                        <ul>
+                            <li>Rennie Wood</li>
+                            <li>Founder</li>
+                        </ul>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="feedback-item">
+                        <img src="assets/images/feedback/feedback-line.png" alt="image">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                        <ul>
+                            <li>Macie Mood</li>
+                            <li>Ex Manager</li>
+                        </ul>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="feedback-item">
+                        <img src="assets/images/feedback/feedback-line.png" alt="image">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum lacus, tempus aliquam turpis diam amet leo enim. Nisi enim lorem condimentum tincidunt ornare nam adipiscing. Volutpat lacus, est hendrerit elit sed interdum.</p>
+                        <ul>
+                            <li>Olivia Jenar</li>
+                            <li>CEO and Director</li>
+                        </ul>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+
+        <div class="text-center mt-5">
+            <h5>Add Your FeedBack</h5>
+        </div>
+        
+    </div>
+</div>

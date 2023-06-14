@@ -1,0 +1,144 @@
+<!-- Page Banner -->
+<div class="inner-banner inner-bg4">
+    <div class="container">
+        <div class="inner-title">
+            <h1>Your NFT Ticket</h1>
+            <ul>
+                <li>
+                    <a routerLink="/">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/manage-events">
+                        Events
+                    </a>
+                </li>
+                <li>
+                    Tickets
+                </li>
+            </ul>
+            <div class="inner-shape">
+                <img src="assets/images/inner-banner/inner-shape1.png" alt="shape">
+                <img src="assets/images/inner-banner/inner-shape2.png" alt="shape">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Item Details -->
+<div class="item-details-area ptb-100">
+    <div class="container">
+        <div class="row" *ngIf="!ticket || !ticket.event">
+            <div class="col">
+                Loading ...
+            </div>
+        </div>
+        <div class="row" *ngIf="ticket && event">
+            <div class="col-xl-7 col-lg-6 col-md-12">
+                <div class="item-details-left-side pr-20">
+                    <div class="item-details-img">
+                        <img class="w-100 img img-fluid" [src]="ticket.image" alt="nft-image">
+                        <span><i class="ri-heart-line"></i>3</span>
+                    </div>
+                    <div class="item-details-content">
+                        <h3>Other Tickets for this Event</h3>
+                        <div class="item-details-into" >
+                            <div class="item-details-card" *ngFor="let ticketType of ticketTypes">
+                                <div class="item-details-card-img">
+                                    <img class="img-ticket-type img-fluid"  src={{ticketType.logo}} alt="author">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div class="item-details-card-content">
+                                    <h3>Name <strong>{{ticketType.name}}</strong></h3>
+                                    <span *ngIf="ticketType.requiresNFT && ticketType.nftToken">Requires NFT <strong>{{ticketType.nftToken.name}}</strong></span>
+                                </div>
+                                <div class="work-hours">
+                                    Available: {{ (ticketType.maxTickets - ticketType.ticketsSold) }}/{{ticketType.maxTickets}}
+
+                                    
+                                </div>
+                                <div>
+                                    
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-12">
+                <div class="item-details-desc">
+                    <div class="section-title">
+                        <h3>{{event.name}}</h3>
+                        <p>{{event.desc}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <div class="item-details-user">
+                                <h4>Organizer</h4>
+                                <div class="content">
+                                    <div class="images">
+                                        <img src={{event.logo}} alt="author-image">
+                                        <i class="ri-check-line"></i>
+                                    </div>
+                                    <span>@{{event.orgName}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="item-details-price">
+                        <div class="item-details-title">
+                            <h3>Date:</h3>
+                            <p>{{event.date | date:'MMM dd, y'}}</p>
+                            <span></span>
+                        </div>
+                        <!-- <ul>
+                            
+                            <li>
+                                Category
+                                <strong>Concert</strong>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="item-details-user-item">
+                        <div class="images">
+                            <img class="img-fluid " style="max-width: 10rem;" src="https://place-hold.it/100?text={{event.logo?.substring(0,1)}}" alt="author-image">
+                            <i class="ri-check-line"></i>
+                        </div>
+                        <div class="content">
+                           <h4>{{event.owner}}</h4>
+                            <span>Creator</span>
+                        </div>
+
+                        
+                    </div>
+                    <div class="content mb-2">
+                        <h4 style="font-size: 1rem;">{{event.address}}</h4>
+                         <span>NFT Address</span>
+                     </div>
+
+                     <div class="content mb-2">
+                        <h4 style="font-size: 1rem;">{{id}}</h4>
+                         <span>NFT Token Id</span>
+                     </div>
+                    <div class="item-details-btn">
+                        <a [routerLink]="['/sell-ticket', id]" class="default-btn border-radius-50">
+                            Resell/Auction Ticket
+                        </a>
+                    </div>
+
+                    <div class="content mt-4 p-2" *ngIf="event && url">
+                        <qrcode [qrdata]="url" [width]="312" [errorCorrectionLevel]="'M'"></qrcode>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-live-auction-nfts></app-live-auction-nfts>

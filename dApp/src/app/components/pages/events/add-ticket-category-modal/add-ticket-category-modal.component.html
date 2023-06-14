@@ -1,0 +1,150 @@
+<div class="modal-header">
+    <h4 class="modal-title">Define a Ticket Type</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  
+  <form class="form p-3" *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  
+  <div class="modal-body">
+    <div class="row">
+      <div class="col p-2" >
+          
+            <div class="mb-3">
+                <label for="name" class="form-label">Ticket Name</label>
+                <input type="text" placeholder="Name e.g VIP, General, Premium"  formControlName="name" class="form-control" id="name" aria-describedby="nameHint">                
+                <div class="form-text" id="nameHint"></div> 
+                
+  
+                <!-- <div class="error-message" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                  <div *ngFor="let error of  objectKeys(form.get('name')?.errors)">                                        
+                      {{validationMessages.name[error]}}
+                  </div>
+                </div> -->
+            </div>
+
+            <div class="mb-3">
+                <label for="logo" class="form-label">Ticket Image</label>
+                <input type="text" placeholder="Logo Url"  formControlName="logo" class="form-control" id="logo" aria-describedby="logo">                
+                <div class="form-text">Full Url to the Image for this Ticket </div> 
+                
+  
+                <!-- <div class="error-message" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                  <div *ngFor="let error of  objectKeys(form.get('name')?.errors)">                                        
+                      {{validationMessages.name[error]}}
+                  </div>
+                </div> -->
+            </div>
+  
+              
+  
+            <div class="mb-3 form-check">
+                <input type="checkbox" formControlName="requiresNFT" class="form-check-input" id="requiresNFT" aria-describedby="requiresNFTHint">
+                <label class="form-check-label" for="requiresNFT">Requires NFT</label>
+  
+                <div id="requiresNFTHint" class="form-text">Restrict this ticket to holders of the NFT address specified below.</div>
+            </div>
+  
+            <div class="mb-3">
+                <label for="nftAddress" class="form-label">NFT Address</label>
+                <input type="text" placeholder="0x..."  formControlName="nftAddress" class="form-control" id="nftAddress" aria-describedby="nftAddress">                
+                <div id="nftAddress" class="form-text" > </div> 
+                
+  
+                <!-- <div class="error-message" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                  <div *ngFor="let error of  objectKeys(form.get('name')?.errors)">                                        
+                      {{validationMessages.name[error]}}
+                  </div>
+                </div> -->
+            </div>
+
+            <div class="mb-3">
+                <label for="maxTickets" class="form-label">No of Tickets</label>
+                <input type="number" placeholder="1"  formControlName="maxTickets" class="form-control" id="maxTickets" aria-describedby="maxTickets">                
+                <div id="maxTickets" class="form-text" > </div> 
+                
+  
+                <!-- <div class="error-message" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                  <div *ngFor="let error of  objectKeys(form.get('name')?.errors)">                                        
+                      {{validationMessages.name[error]}}
+                  </div>
+                </div> -->
+            </div>
+
+
+            <div class="mb-3">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3>Prices</h3>
+                            <h5>Setup prices for your tickets in different currencies</h5>
+                        </div>
+
+                        <ng-container formArrayName="ticketPrices">
+                                            
+                            <div *ngFor="let _ of ticketPricesFormArray.controls; index as i">
+                                <ng-container [formGroupName]="i">
+                                  
+        
+                                  <div class="row {{i%2==0?'striped-vest':''}}">
+                                    <div class="col">
+                                        <div class="my-3 d-flex justify-content-left" >
+                                            
+                                            <div class="mx-2 ">
+                                                <input  hidden placeholder="" formControlName="currency"   /> 
+                                                <input class=""  placeholder="" formControlName="amount"   />
+                                            </div>
+        
+                                            <div class="mx-2 ">{{ticketPricesFormArray.controls[i].get('currency')?.value}}</div>
+                                            
+                                            
+                                            <div class="mt-2 form-text">
+                                                
+                                            </div>
+        
+                                            <!-- <div class="error-message" *ngIf="tokenVestings.controls[i].get('amount')?.invalid && tokenVestings.controls[i].get('amount')?.touched">
+                                                <div *ngFor="let error of  objectKeys(tokenVestings.controls[i].get('amount')?.errors)">                                        
+                                                {{validationMessages.vesting.amount[error]}}
+                                                </div>
+                                            </div> -->
+        
+                                        </div>
+                                    </div>
+        
+                                </div>
+                                </ng-container>
+                            </div>
+        
+                            
+        
+                            <div style="color:rgb(116, 196, 11)">
+                                
+                                <div class="text-hint">
+                                    * Input the Estimated cost of your ticket in the currencies above. <br/>
+                                    <i>If you don't want to accept a particular currency,leave as zero.</i>
+                                </div>
+                                
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            
+
+
+                
+            </div>
+              
+            
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    
+    <button type="submit" class="btn btn-primary" [disabled]=" form.invalid ">Submit</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>
+  
+  
+  </form>
+  
+  

@@ -1,0 +1,12 @@
+diff --git a/node_modules/@wagmi/connectors/dist/injected.d.ts b/node_modules/@wagmi/connectors/dist/injected.d.ts
+index 5086488..7b50228 100644
+--- a/node_modules/@wagmi/connectors/dist/injected.d.ts
++++ b/node_modules/@wagmi/connectors/dist/injected.d.ts
+@@ -284,6 +284,7 @@ declare class InjectedConnector extends Connector<WindowProvider | undefined, Co
+                 params: viem_dist_types_types_eip1193.WatchAssetParams;
+             }): Promise<boolean>;
+         };
++        
+         transport: viem.TransportConfig<"custom", {
+             (args: {
+                 method: "web3_clientVersion";

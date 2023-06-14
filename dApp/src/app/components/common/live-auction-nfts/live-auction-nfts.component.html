@@ -1,0 +1,56 @@
+<!-- <div
+    class="auctions-area pb-100"
+    [ngClass]="{'d-none': router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title">
+            <h2>Live Ticket Auctions</h2>
+            <a routerLink="/live-auctions" class="default-btn border-radius-5">Explore More</a>
+        </div>
+        <div class="auctions-slider" >
+            <owl-carousel-o [options]="auctionSlides" >
+                <ng-template carouselSlide *ngFor="let item of events">
+                    <div class="auction-item">
+                        <div class="image">
+                            <a routerLink="/item-details" class="d-block">
+                                <img src={{item.logo}} alt="nft-image">
+                            </a>
+                            <button type="button" class="default-btn border-radius-5">Buy Ticket</button>
+                        </div>
+                        <div class="content">
+                            <div class="auction-item-list">
+                                <div class="author">
+                                    <a routerLink="/author-profile">
+                                        <img src="assets/images/author/author7.jpg" alt="author-image">
+                                    </a>
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <h3>
+                                    <a routerLink="/item-details">
+                                        {{item.name}}
+                                    </a>
+                                </h3>
+                                <span>
+                                    Created by
+                                    <a routerLink="/author-profile">
+                                        @{{item.orgName}}
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="auction-item-content">
+                                <div class="auction-right">
+                                    <span>Category</span>
+                                    <a routerLink="/">{{item.category}}</a>
+                                </div>
+                                <div class="auction-left">
+                                    <span>Date</span>
+                                    <h3>{{item.date}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h4 class="modal-title">Buy Ticket</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  
+  
+  
+  <div class="modal-body" *ngIf="ticketType">
+
+    <div class="row">
+        <div class="col p-2">
+            <div class="card">
+                <!-- <div class="card-header">
+                    <h3>Ticket Prices</h3>
+                </div> -->
+                <img class="img-ticket-type img-fluid card-img-top" src={{ticketType.logo}} alt="author">
+                <div class="card-body px-2">
+                    
+                    <h5 class="card-title mt-2">{{ticketType.name}} Ticket</h5>
+
+                    <h6 class="card-title mt-2" *ngIf="ticketType.requiresNFT && ticketType.nftToken">Requires NFT <strong>{{ticketType.nftToken.name}}</strong></h6>
+                    
+                    <div class="work-hours mt-3">
+                        Available: {{ (ticketType.maxTickets - ticketType.ticketsSold) }}/{{ticketType.maxTickets}}
+                    </div>
+
+                    
+
+                    <div class="alert alert-info mt-4">
+                        Visit our <a routerLink="/faucet">faucet</a> to get Test Coins to purchase a ticket
+                    </div>
+
+                    <div *ngFor="let price of ticketType.ticketPrices; index as i">
+                        
+                          
+
+                        <div *ngIf="price.price > 0" class="row {{i%2==0?'striped-vest':''}}">
+                            <div class="col">
+                                <div class="my-3 d-flex justify-content-between" >
+                                    
+                                    <div class="mx-2 my-2">{{ formatUnits(price.price, 'ether') | number:'1.0-4'}} {{currencyName(price.currency)}}</div>
+                                    <div><button class="btn btn-primary py-2 px-2 my-2 mx-4 " (click)="buyTicket(price)">Buy Now</button></div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- <div class="modal-footer">
+    
+    <button type="submit" class="btn btn-primary" [disabled]=" form.invalid ">Buy Now</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Later</button>
+  </div> -->
+  
+  
+  
+  
+  
