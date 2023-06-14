@@ -6,7 +6,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 	const {ethers, deployments, getNamedAccounts} = hre;
 	const {deploy} = deployments;
 
-	const {deployer, simpleERC20Beneficiary: buyer} = await getNamedAccounts();
+	/*const {deployer, simpleERC20Beneficiary: buyer} = await getNamedAccounts();
 
 	await deploy('SeatAssigner', {
 		from: deployer,
@@ -16,7 +16,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 		],
 		log: true,
 		autoMine: true, // speed up deployment on local network (ganache, hardhat), no effect on live networks
-	});
+	}); */
 };
 export default func;
 func.tags = ['seat'];

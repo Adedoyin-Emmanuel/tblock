@@ -29,8 +29,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
 	const c = [
 		{
-			name: 'Mock LINK',
-			symbol: 'mLink',
+			name: 'Mock tEVMOS',
+			symbol: 'mtEVMOS',
 		},
 		{
 			name: 'Mock TicketBlck',
