@@ -138,6 +138,12 @@ const config: HardhatUserConfig = {
 				process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY, process.env.PRIVATE_KEY_2!] : [],
 			chainId: 195,
 		},
+		evmos_t: {
+			url: 'https://eth.bd.evmos.dev:8545',
+			accounts:
+				process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY, process.env.PRIVATE_KEY_2!] : [],
+			chainId: 9000,
+		},
 	}),
 	paths: {
 		sources: 'src',
