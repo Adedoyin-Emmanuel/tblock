@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/html'
 import { configureChains, createConfig, watchNetwork, watchAccount, Unit, PublicClient, Chain, getContract, erc721ABI } from '@wagmi/core';
-import { arbitrum, fantom, fantomTestnet, mainnet, polygon, sepolia, evmos } from '@wagmi/core/chains';
+import { arbitrum, fantom, fantomTestnet, mainnet, polygon, sepolia, evmos, evmosTestnet } from '@wagmi/core/chains';
 import { getAccount, readContract,  getWalletClient, getPublicClient, fetchBalance, fetchToken, getNetwork ,switchNetwork} from '@wagmi/core';
 
 import { ethers } from 'ethers';
@@ -24,7 +24,7 @@ import { ganache, hardhat, okbTestChain, thetaTestnet } from './extra-chains';
 })
 export class Web3Service {
 
-  chains = [/*arbitrum, mainnet, polygon, fantom, fantomTestnet,*/ ganache, hardhat, evmos];
+  chains = [/*arbitrum, mainnet, polygon, fantom, fantomTestnet,*/ ganache, hardhat, evmos, evmosTestnet];
   // 1. Define constants
   projectId = environment.walletConnectProjectId;
   web3Modal: Web3Modal| undefined;
@@ -61,7 +61,7 @@ export class Web3Service {
     this.publicClient = publicClient;
     const wagmiClient = createConfig({
       autoConnect: true,
-      connectors: w3mConnectors({ projectId: this.projectId, version: 1, chains: this.chains }),
+      connectors: w3mConnectors({ projectId: this.projectId, version: 2, chains: this.chains }),
       publicClient
     })
     this.ethereumClient = new EthereumClient(wagmiClient, this.chains)
